@@ -7,7 +7,7 @@
 
     <TabHost
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:id="@+id/tabHost"
         android:layout_gravity="center_horizontal">
 
@@ -24,10 +24,34 @@
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
-                android:layout_height="246dp">
+                android:layout_height="fill_parent">
 
                 <LinearLayout
-                    android:id="@+id/tab1"
+                    android:id="@+id/tabTask"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Neue Aufgabe"
+                        android:id="@+id/btnNewTask"
+                        android:layout_below="@+id/textViewHeader"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <ListView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/listViewTasks"
+                        android:layout_below="@+id/btnNewTask"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabMember"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:orientation="vertical">
@@ -40,41 +64,10 @@
                         android:layout_alignTop="@+id/btnNewTask"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Neue Aufgabe"
-                        android:id="@+id/btnNewTask"
-                        android:layout_below="@+id/textViewHeader"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="WG Plan"
-                        android:id="@+id/textViewHeader"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true" />
-
-                    <ListView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/listViewTasks"
-                        android:layout_below="@+id/btnNewTask"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"></LinearLayout>
-
             </FrameLayout>
+
         </LinearLayout>
     </TabHost>
 
